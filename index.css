@@ -1,54 +1,111 @@
-/* Estilos para la página principal (index.html) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FONDO */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-  background: linear-gradient(135deg, #3f0f7d, #7928bf, #3cc8e8);
-  min-height: 100vh;
-    text-align: center;
-    padding: 20px;
+  height: 100vh;
+  background: linear-gradient(135deg, #6e28af, #3b145f, #1b4f8a);
 }
 
-header {
-    padding: 20px;
-    margin-bottom: 20px;
+/* CONTENEDOR */
+.inicio-container {
+  display: flex;
+  height: 100vh;
 }
 
-h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+/* IMAGEN */
+.inicio-imagen {
+  width: 40%;
 }
 
-p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+.inicio-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* TEXTO */
+.inicio-texto {
+  width: 60%;
+  padding: 80px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #00CED1; /* Turquesa */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    margin: 10px;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+/* TÍTULO */
+.inicio-texto h1 {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 120px;
+  color: #5ad7ff;
+  margin-bottom: 20px;
 }
 
-.button:hover {
-    background-color: #008B8B; /* Turquesa Oscuro */
-    transform: translateY(-5px); /* Elevar el botón al pasar el ratón */
+/* DESCRIPCIÓN */
+.inicio-texto p {
+  font-family: 'Just Me Again Down Here', cursive;
+  font-size: 26px;
+  max-width: 450px;
+  margin-bottom: 50px;
 }
 
-footer {
-    margin-top: 30px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro transparente */
-    border-radius: 8px;
+/* ROMBO CONTENEDOR */
+.rombo {
+  position: relative;
+  width: 480px;
+  height: 250px;
+}
+
+/* BOTONES */
+.btn {
+  position: absolute;
+  padding: 14px 26px;
+  background: linear-gradient(135deg, #6f6cff, #5ad7ff);
+  color: white;
+  text-decoration: none;
+  border-radius: 14px;
+  font-family: 'Just Me Again Down Here', cursive;
+  font-size: 30px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+/* HOVER SIN MOVER */
+.btn:hover {
+  box-shadow: 0 0 18px rgba(90, 215, 255, 0.8);
+}
+
+/* POSICIONES */
+.top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
