@@ -1,0 +1,98 @@
+/* Estilos para la página "Conoce Letscode" (conoce.html) */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #4B0082, #8A2BE2); /* Fondo degradado morado */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #00CED1; /* Turquesa */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro transparente */
+    border-radius: 10px;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto hover */
+}
+
+#informacion-letscode {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.division {
+    width: 48%; /* Dos divisiones por fila */
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco transparente */
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto hover */
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #9370DB; /* Lavanda */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #00CED1; /* Turquesa */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+/* Estilos para el efecto hover */
+main:hover {
+    transform: translateY(-5px); /* Pequeño desplazamiento hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 206, 209, 0.3); /* Sombra turquesa */
+}
+
+.division:hover {
+    transform: translateY(-5px); /* Pequeño desplazamiento hacia arriba */
+    box-shadow: 0 5px 10px rgba(147, 112, 219, 0.3); /* Sombra lavanda */
+}
+
+img:hover {
+    transform: scale(1.1); /* Pequeño aumento de tamaño */
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #9370DB;
+}
+
+.volver:hover {
+  background-color: #00CED1;
+}

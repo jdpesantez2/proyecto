@@ -1,0 +1,87 @@
+/* Estilos para la página de registro (registro.html) */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #000; /* Fondo negro */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro transparente */
+    border-radius: 10px;
+    padding: 40px;
+    width: 80%;
+    max-width: 600px;
+    border: 2px solid #9370DB; /* Lavanda */
+    transition: transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: #00CED1; /* Turquesa */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: left;
+    color: #9370DB; /* Lavanda */
+    transition: color 0.3s ease; /* Transición para el efecto hover */
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco transparente */
+    color: #fff;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición para el efecto hover */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #00CED1; /* Turquesa */
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    margin-top: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+/* Estilos para el efecto hover */
+main:hover {
+    transform: scale(1.05); /* Pequeño aumento de tamaño */
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.5); /* Sombra turquesa */
+}
+
+label:hover {
+    color: #00CED1; /* Cambiar el color al pasar el ratón */
+}
+
+input:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo más claro al pasar el ratón */
+    color: #00CED1; /* Cambiar el color del texto al pasar el ratón */
+}
+
+button:hover {
+    background-color: #9370DB; /* Lavanda */
+    color: #fff;
+    transform: translateY(-3px); /* Pequeño desplazamiento hacia arriba */
+    box-shadow: 0 5px 10px rgba(147, 112, 219, 0.5); /* Sombra lavanda */
+}

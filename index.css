@@ -1,0 +1,54 @@
+/* Estilos para la página principal (index.html) */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+  background: linear-gradient(135deg, #3f0f7d, #7928bf, #3cc8e8);
+  min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #00CED1; /* Turquesa */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 10px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #008B8B; /* Turquesa Oscuro */
+    transform: translateY(-5px); /* Elevar el botón al pasar el ratón */
+}
+
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro transparente */
+    border-radius: 8px;
+}
