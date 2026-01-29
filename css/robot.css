@@ -1,0 +1,268 @@
+/* GENERAL */
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg,#000000,#6132c6,#000000);
+  color:white;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  box-sizing: border-box;
+    padding: 15px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(135deg, #544ac5, #6ff2ff);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    border-radius: 0;          /* CLAVE */
+}
+
+
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000cc;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.nav-links .activo {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 3px;
+}
+
+/* HERO */
+.robot-hero{
+  text-align:center;
+  padding:60px 20px;
+}
+
+.robot-nombre{
+  font-size:60px;
+  color:#6ff2ff;
+}
+
+.robot-intro{
+  max-width:900px;
+  margin:30px auto;
+  font-size:18px;
+  line-height:1.7;
+  background: rgba(255,255,255,.08);
+  padding:40px;
+  border-radius:30px;
+}
+
+/* VIDEO */
+.video-section{
+  display:flex;
+  justify-content:center;
+  margin:60px 0;
+}
+
+.video-marco{
+  padding:10px;
+  border-radius:30px;
+  background: linear-gradient(135deg,#6f6cff,#5ad7ff);
+  box-shadow: 0 0 30px rgba(90,215,255,.8);
+}
+
+.video-marco video{
+  width:800px;
+  max-width:100%;
+  border-radius:20px;
+}
+
+/* PARTES DEL ROBOT */
+.partes{
+  text-align:center;
+  padding:60px 20px;
+  position: relative;
+}
+
+/* Fondo elegante detrás de las tarjetas */
+.partes::before{
+  content:"";
+  position:absolute;
+  top:50px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  height:500px;
+  background: linear-gradient(135deg, rgba(111,108,255,0.2), rgba(90,215,255,0.1));
+  border-radius:40px;
+  box-shadow: 0 0 60px rgba(111,108,255,0.3);
+  z-index:0;
+}
+
+.partes h2{
+  font-size:40px;
+  color:#6ff2ff;
+  margin-bottom:50px;
+  position:relative;
+  z-index:1;
+}
+
+/* TARJETAS */
+.tarjetas{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap:40px;
+  justify-items:center;
+  position:relative;
+  z-index:1;
+  padding: 0 20px;
+}
+
+/* TARJETA FLIP */
+.tarjeta{
+  width:260px;
+  height:200px;
+  perspective:1200px;
+  cursor:pointer;
+  position: relative;
+}
+
+.cara{
+  width:100%;
+  height:100%;
+  position:absolute;
+  backface-visibility:hidden;
+  border-radius:25px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  box-sizing:border-box;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1),
+              box-shadow 0.4s ease;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Borde luminoso al pasar o girar */
+.tarjeta:hover .cara.frente,
+.tarjeta.girar .cara.frente {
+  box-shadow: 0 0 25px #6ff2ff, 0 0 50px #6ff2ff55;
+}
+
+/* FRENTE */
+.frente{
+  background: linear-gradient(135deg,#6f6cff,#5ad7ff);
+  font-size:22px;
+  font-weight:bold;
+  text-align:center;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ATRÁS */
+.atras{
+  background:#1e1e2f;
+  transform: rotateY(180deg);
+  font-size:16px;
+  line-height:1.5;
+  text-align:center;
+  color:#fff;
+  box-shadow: inset 0 0 10px #6ff2ff33;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ANIMACIÓN AL GIRAR */
+.tarjeta.girar .frente{
+  transform: rotateY(180deg);
+}
+.tarjeta.girar .atras{
+  transform: rotateY(0deg);
+}
+
+/* FUNCIONALIDADES DEL ROBOT */
+.funcionalidades{
+  text-align:center;
+  padding:60px 20px;
+  position: relative;
+}
+
+.funcionalidades h2{
+  font-size:40px;
+  color:#6ff2ff;
+  margin-bottom:20px;
+}
+
+.func-intro{
+  max-width:800px;
+  margin:0 auto 50px auto;
+  font-size:18px;
+  line-height:1.6;
+  color:white;
+}
+
+/* CUADRO DE 4 VIDEOS */
+.videos-cuadro{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap:10px; /* reducido para unir más los videos */
+  justify-items:center;
+  align-items:center;
+}
+
+.videos-cuadro video{
+  width:100%;
+  max-width:450px; /* videos más grandes */
+  height:250px; /* altura fija para un cuadro uniforme */
+  border-radius:25px;
+  box-shadow: 0 0 35px #6ff2ff, 0 0 60px #6ff2ff55;
+  object-fit:cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efecto al pasar mouse (ligera ampliación y resaltar) */
+.videos-cuadro video:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 45px #6ff2ff, 0 0 70px #6ff2ff88;
+}
+
+/* Ajuste responsive para pantallas más pequeñas */
+@media screen and (max-width:900px){
+  .videos-cuadro{
+    grid-template-columns: 1fr; /* una columna en móvil */
+  }
+  .videos-cuadro video{
+    max-width:90%;
+    height:auto;
+  }
+}

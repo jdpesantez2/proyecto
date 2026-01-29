@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Robot Let’s Code</title>
+<link rel="stylesheet" href="../css/robot.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">CodePlay</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="niveles.html">Niveles</a></li>
+    <li><a href="robot.html" class="activo">Robot</a></li>
+    <li><a href="progreso.html">Progreso</a></li>
+    <li><a href="conoce.html">Conoce</a></li>
+    <li><a href="registro.html">Registro</a></li>
+  </ul>
+</nav>
+
+<section class="robot-hero">
+  <h1 class="robot-nombre">Robot LetsCode</h1>
+
+  <p class="robot-intro">
+    El robot de <b>Let’s Code</b> es un robot educativo que se programa mediante
+    <b>bloques visuales</b>.  
+    Este tipo de programación permite controlar <b>hardware real</b> de forma sencilla,
+    entendiendo la lógica sin necesidad de escribir código complejo.
+    <br><br>
+    La programación por bloques está diseñada para interactuar con sensores,
+    motores y componentes físicos, facilitando el aprendizaje de la robótica
+    y la automatización.
+    <br><br>
+    A continuación, conoceremos las <b>partes que complementan el robot</b>.
+  </p>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-marco">
+    <video src="../videos/video1.mp4" controls></video>
+  </div>
+</section>
+
+<!-- PARTES DEL ROBOT -->
+<section class="partes">
+  <h2>Partes del Robot</h2>
+
+  <div class="tarjetas">
+
+    <div class="tarjeta">
+      <div class="cara frente">📢 Speaker / Altavoz</div>
+      <div class="cara atras">
+        Dispositivo que emite sonido. Se utiliza para reproducir alertas, señales acústicas o efectos sonoros generados por el sistema del robot.
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="cara frente">📡 IR Receiver / Receptor IR</div>
+      <div class="cara atras">
+        Componente que recibe señales infrarrojas, normalmente desde un control remoto. Permite controlar el robot de forma inalámbrica mediante comandos.
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="cara frente">📏 Ultrasonic Distance Sensor</div>
+      <div class="cara atras">
+        Sensor que mide la distancia a los objetos usando ondas ultrasónicas. Se usa para detectar obstáculos y evitar colisiones.
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="cara frente">🌗 2x Infrared Reflection Sensors</div>
+      <div class="cara atras">
+        Sensores que detectan superficies claras u oscuras mediante reflexión infrarroja. Se usan comúnmente para seguir líneas o detectar bordes.
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="cara frente">🧠 ESP32 Controller Module</div>
+      <div class="cara atras">
+        Es el microcontrolador principal del sistema. Procesa la información de los sensores y controla los motores, luces y demás componentes del robot.
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="cara frente">🔌 I2C Interface / Interfaz I2C</div>
+      <div class="cara atras">
+        Puerto de comunicación que permite conectar otros módulos o sensores usando el protocolo I2C, facilitando la expansión del sistema.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FUNCIONALIDADES DEL ROBOT -->
+<section class="funcionalidades">
+  <h2>Lo que el Robot puede hacer</h2>
+  <p class="func-intro">
+    Cuando programamos con bloques, el robot puede realizar varias tareas:
+    cambiar de luces, seguir una línea, evitar chocar con objetos y seguir una fuente de luz.
+  </p>
+
+  <div class="videos-cuadro">
+    <video src="../videos/luz.mp4" autoplay loop muted playsinline></video>
+    <video src="../videos/linea.mp4" autoplay loop muted playsinline></video>
+    <video src="../videos/evita.mp4" autoplay loop muted playsinline></video>
+    <video src="../videos/sigue.mp4" autoplay loop muted playsinline></video>
+  </div>
+</section>
+
+
+<script src="../js/robot.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: url("../imagenes/fondo.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* OSCURECER UN POCO EL FONDO */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+
+.quiz-container {
+  position: relative;
+  z-index: 1;
+  width: 680px;        /* MÁS ANCHO */
+  padding: 45px;      /* MÁS ESPACIO INTERNO */
+  border: 2px solid #8f00ff;
+  box-shadow: 0 0 30px #8f00ff;
+  background: rgba(0, 0, 0, 0.88);
+  animation: aparecer 0.6s ease;
+}
+
+#question {
+  color: #00e5ff;
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 26px;        /* MÁS GRANDE */
+  line-height: 1.4;
+  text-shadow: 0 0 10px #00e5ff;
+}
+
+
+/* OPCIONES */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #00e5ff;
+  padding: 16px;      /* MÁS ALTAS */
+  font-size: 17px;    /* TEXTO MÁS GRANDE */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* HOVER */
+.option:hover {
+  background: rgba(0, 229, 255, 0.15);
+  box-shadow: 0 0 10px #00e5ff;
+  transform: scale(1.02);
+}
+
+/* CORRECTA */
+.correct {
+  border-color: #00ff99;
+  color: #00ff99;
+  box-shadow: 0 0 15px #00ff99;
+}
+
+/* INCORRECTA */
+.incorrect {
+  border-color: #ff0055;
+  color: #ff0055;
+  box-shadow: 0 0 15px #ff0055;
+  animation: shake 0.4s;
+}
+
+.volver-niveles {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-volver-niveles {
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #00e5ff, #8f00ff);
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 15px #8f00ff;
+  transition: all 0.3s ease;
+}
+
+.btn-volver-niveles:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00e5ff;
+}
+
+
+/* ANIMACIONES */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

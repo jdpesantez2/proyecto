@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: url("../imagenes/fondo.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  width: 95%;
+  min-height: 90vh;
+  background: rgba(0,0,0,0.78);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 0 40px #8f00ff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* INSTRUCCIÓN */
+.instruction-box {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#instruction {
+  font-size: 24px;
+  color: #00e5ff;
+  background: rgba(0,0,0,0.5);
+  padding: 18px 35px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #00e5ff;
+}
+
+/* ÁREA DE PREGUNTA */
+#question-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* IMAGEN */
+.image-box {
+  border: 4px solid #00e5ff;
+  border-radius: 25px;
+  padding: 25px;
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 0 25px #8f00ff;
+  /* ❗ NO margin-bottom extra */
+}
+
+.image-box img {
+  width: 320px;
+  max-width: 100%;
+}
+
+/* OPCIONES TEXTO (PEGADAS A LA IMAGEN COMO ANTES) */
+.options.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 60%;
+  margin-top: 15px; /* 👈 espacio NORMAL, NO grande */
+}
+
+.option {
+  padding: 20px;
+  font-size: 22px;
+  border-radius: 18px;
+  border: 3px solid #00e5ff;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option:hover {
+  background: #00e5ff;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* IMAGE SELECT */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* DRAG */
+.drop-zone {
+  margin: 30px 0;
+  width: 320px;
+  height: 90px;
+  border: 3px dashed #00e5ff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+}
+
+.drag-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.drag-word {
+  padding: 18px;
+  font-size: 20px;
+  border-radius: 15px;
+  border: 3px solid #00e5ff;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  cursor: grab;
+  text-align: center;
+}
+
+/* MATCH */
+.match-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin-bottom: 40px;
+}
+
+.drag-word.large {
+  font-size: 22px;
+  padding: 20px;
+}
+
+/* FEEDBACK */
+.correct {
+  border-color: #00ff99 !important;
+  box-shadow: 0 0 25px #00ff99;
+}
+
+.incorrect {
+  border-color: #ff0055 !important;
+  box-shadow: 0 0 25px #ff0055;
+}
+
+/* RESULTADO */
+.result-box {
+  margin: auto;
+  padding: 40px;
+  max-width: 420px;
+  border-radius: 25px;
+  background: rgba(0,0,0,0.85);
+  box-shadow: 0 0 25px #8f00ff;
+  text-align: center;
+}
+
+.result-box h2 {
+  color: #00e5ff;
+}
+
+.result-box p {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.result-box a {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #00e5ff, #8f00ff);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* TRANSICIONES */
+.fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-15px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

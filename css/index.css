@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FONDO */
+body {
+  height: 100vh;
+   overflow: hidden; /* 👈 evita mover la página */
+  background: linear-gradient(135deg, #6e28af, #3b145f, #1b4f8a);
+}
+
+.inicio-container {
+  display: flex;
+  flex-direction: row-reverse; /* IMAGEN A LA DERECHA, TEXTO A LA IZQUIERDA */
+  height: 100vh;
+}
+
+.inicio-imagen {
+  width: 45%; /* antes 40% */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: -40px; /* 👈 lo acerca al texto */
+}
+
+.inicio-imagen img {
+  max-width: 100%;
+  height: auto;
+  transform: scale(1.4); /* tamaño grande pero seguro */
+  transform-origin: left center;
+}
+
+
+/* TEXTO */
+.inicio-texto {
+  width: 60%;
+  padding: 80px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===== TÍTULO CON BRILLO ===== */
+.titulo-glow {
+  font-family: Arial;
+  font-size: 120px;
+  color: #5ad7ff;
+  margin-bottom: 20px;
+  text-shadow:
+    0 0 10px rgba(90, 215, 255, 0.9),
+    0 0 20px rgba(90, 215, 255, 0.7),
+    0 0 40px rgba(111, 108, 255, 0.6),
+    0 0 60px rgba(111, 108, 255, 0.4);
+}
+
+/* DESCRIPCIÓN */
+.inicio-texto p {
+  font-family: Arial;
+  font-size: 20px;
+  max-width: 450px;
+  margin-bottom: 60px;
+}
+
+/* ===== ROMBO SIMÉTRICO ===== */
+.rombo {
+  position: relative;
+  width: 500px;
+  height: 200px;
+}
+
+/* BOTONES */
+.btn {
+  position: absolute;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #6f6cff, #5ad7ff);
+  color: white;
+  text-decoration: none;
+  border-radius: 16px;
+  font-family: Arial;
+  font-size: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* HOVER */
+.btn:hover {
+  box-shadow: 0 0 16px rgba(90, 215, 255, 0.75);
+}
+
+/* POSICIONES PERFECTAS */
+.top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* CONTENEDOR DEL ROBOT */
+.robot-wrapper {
+  position: relative;
+}
+
+/* ROBOT (respeta tu tamaño actual) */
+.robot {
+  max-width: 100%;
+  height: auto;
+  transform: scale(1.4);
+}
+
+/* BLOQUES */
+.bloque {
+  position: absolute;
+  width: 140px;
+  height: auto;
+  padding: 6px;
+  background: linear-gradient(135deg, #f4f5f5, #3592ab);
+ border-radius: 12px;          /* antes 14px */
+ box-shadow: 0 0 8px rgba(90,215,255,0.4); /* menos brillo */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 2;
+}
+
+/* ANIMACIÓN HOVER */
+.bloque:hover {
+  transform: scale(1.08);   /* antes 1.15 */
+  box-shadow: 0 0 14px rgba(90,215,255,0.7);
+}
+
+
+/* POSICIONES (SOLO ALREDEDOR DEL ROBOT) */
+.bloque-arriba {
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bloque-izq {
+  left: -70px;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.bloque-abajo {
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* BLOQUES EXTRA */
+.bloque-arriba-izq {
+  top: -0px;
+  left: -20px;
+}
+
+.bloque-abajo-izq {
+  bottom: -0px;
+  left: -10px;
+}

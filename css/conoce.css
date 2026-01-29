@@ -1,0 +1,252 @@
+body{
+  margin:0;
+  background: linear-gradient(180deg,#000000,#0d3672);
+  font-family: Arial;
+  color:white;
+}
+
+.navbar {
+  width: 100%;
+  box-sizing: border-box;
+    padding: 15px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(135deg, #544ac5, #6ff2ff);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    border-radius: 0;          /* CLAVE */
+}
+
+
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #060606cc;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.nav-links .activo {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 3px;
+}
+
+/* HERO */
+.hero{
+  height:80vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.hero-box{
+  background: rgba(255,255,255,.1);
+  padding:50px;
+  border-radius:30px;
+  text-align:center;
+  width:70%;
+  animation: fade 2s ease;
+}
+.hero h1{font-size:60px;color:#6ff2ff;}
+.hero p{font-size:18px;}
+.btn{
+  margin-top:15px;
+  padding:10px 30px;
+  border:none;
+  border-radius:20px;
+  background:#6fa8ff;
+  cursor:pointer;
+}
+
+/* INTRO */
+.intro{text-align:center;margin:40px;}
+.intro h2{color:#6ff2ff;font-size:40px}
+
+/* MOSAICO */
+.mosaico{
+  width:90%;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:80px;
+}
+
+.bloque{
+  display:flex;
+  align-items:center;
+  gap:60px;
+}
+
+.grande{justify-content:space-between;}
+.izquierda{flex-direction:row;}
+.derecha{flex-direction:row-reverse;}
+.centro{flex-direction:column;text-align:center;}
+.ancho{justify-content:space-between;}
+
+.texto{width:50%;}
+.img{width:60%;}
+
+/* DOBLES */
+.doble{display:flex;gap:25px;}
+
+/* MARCOS */
+.marco{
+  background: linear-gradient(135deg,#6f6cff,#5ad7ff);
+  border-radius:20px;
+  padding:12px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* TAMAÑOS EDITABLES */
+.mov{width:300px;height:300px;}
+.look{width:260px;height:250px;}
+.small{width:220px;height:160px;}
+.sound{width:240px;height:180px;}
+.event{width:240px;height:180px;}
+.control{width:280px;height:200px;}
+.sense{width:240px;height:180px;}
+
+/* tamaño base */
+.marco{
+  padding:15px;
+  background: linear-gradient(135deg,#6f6cff,#5ad7ff);
+  border-radius:20px;
+  width:300px;
+  height:220px;
+}
+
+/* variantes */
+.m1{
+  width:450px;
+  height:350px;
+}
+
+.m2{
+  width:260px;
+  height:340px;
+}
+
+.m3{
+  width:420px;
+  height:200px;
+}
+
+.m4{
+  width:420px;
+  height:200px;
+}
+
+.marco{
+  width:320px;   /* cambia el ancho */
+  height:240px;  /* cambia el alto */
+}
+
+.marco img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:14px;
+}
+
+/* ANIM */
+@keyframes fade{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+h3 {
+  font-size: 28px;
+  color: #6ff2ff;
+  margin-bottom: 10px;
+}
+
+.texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.bloque {
+  background: rgba(255,255,255,0.04);
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.bloque:hover {
+  transform: scale(1.01);
+  transition: transform 0.4s ease;
+}
+
+.marco {
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+.hero-box {
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
+
+/* OPERADORES + SENSORES JUNTOS */
+.operadores-sensores{
+  display:flex;
+  justify-content:space-between;
+  gap:60px;
+}
+
+/* BLOQUE VERTICAL */
+.bloque-vertical{
+  width:50%;
+  background: rgba(255,255,255,0.08);
+  padding:30px;
+  border-radius:25px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+/* IMÁGENES ABAJO EN VERTICAL */
+.imagenes-vertical{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:15px;
+}
+
+/* TAMAÑOS */
+.operator{
+  width:220px;
+  height:160px;
+}
+
+.sense{
+  width:220px;
+  height:160px;
+}

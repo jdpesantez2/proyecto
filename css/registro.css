@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Paneles morados a pantalla completa */
+.panel {
+    position: fixed;
+    top: 0;
+    width: 22%;
+    height: 100vh;
+    background: linear-gradient(180deg, #7b1fd1, #2b003a);
+    border: 3px solid #00aaff;
+}
+
+.left {
+    left: -40px;
+    transform: skewX(-6deg);
+}
+
+.right {
+    right: -40px;
+    transform: skewX(6deg);
+}
+
+/* Contenedor central */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #00aaff;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 30px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+/* Formulario */
+form {
+    width: 340px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #00aaff;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid #8a2be2;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #00aaff;
+}
+
+/* Botones */
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.registrar {
+    background: #8a2be2;
+    color: white;
+}
+
+.registrar:hover {
+    background: #00aaff;
+}
+
+.volver {
+    background: transparent;
+    color: #00aaff;
+    border: 2px solid #00aaff;
+}
+
+.volver:hover {
+    background: #00aaff;
+    color: black;
+}

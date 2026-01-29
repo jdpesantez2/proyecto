@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../css/registro.css">
+</head>
+<body>
+    
+<nav class="navbar">
+  <div class="nav-logo">CodePlay</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="niveles.html">Niveles</a></li>
+    <li><a href="robot.html" class="activo">Robot</a></li>
+    <li><a href="progreso.html">Progreso</a></li>
+    <li><a href="conoce.html">Conoce</a></li>
+    <li><a href="registro.html"class="activo">Registro</a></li>
+  </ul>
+</nav>
+
+    <!-- Paneles laterales -->
+    <div class="panel left"></div>
+    <div class="panel right"></div>
+
+    <!-- Contenido central -->
+    <div class="container">
+        <h1>Registrate</h1>
+
+        <form id="registroForm">
+            <label>NOMBRES</label>
+            <input type="text" id="nombres" required>
+
+            <label>USUARIO</label>
+            <input type="text" id="usuario" required>
+
+            <label>CONTRASEÑA</label>
+            <input type="password" id="contrasena" required>
+
+            <div class="buttons">
+                <button type="submit" class="btn registrar">Registrar</button>
+                <button type="button" class="btn volver" onclick="volver()">Volver</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/registro.js"></script>
+</body>
+</html>

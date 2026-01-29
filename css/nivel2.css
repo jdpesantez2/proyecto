@@ -1,0 +1,145 @@
+body{
+  margin:0;
+  font-family: Arial;
+ background: url("../imagenes/fondo.jpg") no-repeat center center fixed;
+  color:white;
+}
+
+.contenedor{
+  width:80%;
+  margin:auto;
+  padding:40px;
+}
+
+h1{
+  text-align:center;
+  color:#6ff2ff;
+}
+
+.subtitulo{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.pregunta{
+  background: rgba(23, 111, 165, 0.686);
+  padding:30px;
+  border-radius:25px;
+  margin-bottom:40px;
+  animation: aparecer .5s ease;
+}
+
+/* OPCIONES */
+.opciones-columna{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.opciones-cuatro{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:15px;
+}
+
+.opcion{
+  background:#000000;
+  padding:15px;
+  border-radius:15px;
+  cursor:pointer;
+  text-align:center;
+  transition:.3s;
+  border:1px solid #444;
+}
+
+.opcion:hover{
+  transform:scale(1.05);
+  background:#2a2a2a;
+}
+
+.correcta{
+  background:#2e7d32 !important;
+}
+
+.incorrecta{
+  background:#c62828 !important;
+}
+
+/* COLORES SIN COLOR */
+.colores{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+  margin-top:20px;
+}
+
+.color-box{
+  background:#111;
+  border:2px solid #555;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.color-box:hover{
+  background:#222;
+  transform:scale(1.05);
+}
+
+/* BOTÓN FINAL */
+#finalizar{
+  display:block;
+  margin:40px auto;
+  padding:15px 40px;
+  border:none;
+  border-radius:20px;
+  background:#6ff2ff;
+  cursor:pointer;
+  font-size:16px;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-box{
+  background:#1e1e2f;
+  padding:40px;
+  border-radius:30px;
+  text-align:center;
+  width:400px;
+  animation: aparecer .5s ease;
+}
+
+.modal-box h2{
+  color:#6ff2ff;
+}
+
+.modal-box button{
+  margin-top:20px;
+  padding:10px 25px;
+  border:none;
+  border-radius:15px;
+  cursor:pointer;
+  background:#6fa8ff;
+}
+
+.oculto{
+  display:none;
+}
+
+@keyframes aparecer{
+  from{opacity:0; transform:scale(.8);}
+  to{opacity:1; transform:scale(1);}
+}
