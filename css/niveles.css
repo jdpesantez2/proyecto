@@ -9,7 +9,7 @@ html, body {
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    background: linear-gradient(to bottom, #2882af, #3b145f, #1b4f8a);
+    background: linear-gradient(to bottom, #3b145f, #2882af);
     color: #fff;
     text-align: center;
 }
@@ -137,8 +137,8 @@ main {
     justify-content: space-between;
     align-items: center;
 
-    background: linear-gradient(135deg, #544ac5, #6ff2ff);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #544ac5);
+    box-shadow: 0 4px 10px rgb(255, 255, 255);
 
     position: sticky;
     top: 0;
@@ -166,7 +166,7 @@ main {
 
 .nav-links a {
   text-decoration: none;
-  color: #000000cc;
+  color: #ffffff;
   font-weight: 500;
   transition: color 0.3s ease;
 }

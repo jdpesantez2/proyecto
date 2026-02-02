@@ -75,8 +75,8 @@ body {
 .btn {
   position: absolute;
   padding: 14px 28px;
-  background: linear-gradient(135deg, #6f6cff, #5ad7ff);
-  color: white;
+  background: linear-gradient(135deg, #817676);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   border-radius: 16px;
   font-family: Arial;
@@ -131,6 +131,12 @@ body {
   max-width: 100%;
   height: auto;
   transform: scale(1.4);
+
+  animation:
+    flotar 5s ease-in-out infinite,
+    brillo-suave 3.5s ease-in-out infinite;
+
+  transition: filter 0.4s ease;
 }
 
 /* BLOQUES */
@@ -182,3 +188,34 @@ body {
   bottom: -0px;
   left: -10px;
 }
+
+/* ===== ANIMACIÓN DE FLOTACIÓN ===== */
+@keyframes flotar {
+  0% {
+    transform: translateY(0) scale(1.4);
+  }
+  50% {
+    transform: translateY(-18px) scale(1.4);
+  }
+  100% {
+    transform: translateY(0) scale(1.4);
+  }
+}
+
+/* ===== BRILLO SUAVE PULSANTE ===== */
+@keyframes brillo-suave {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(90, 215, 255, 0.4))
+            drop-shadow(0 0 20px rgba(111, 108, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(90, 215, 255, 0.75))
+            drop-shadow(0 0 35px rgba(111, 108, 255, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(90, 215, 255, 0.4))
+            drop-shadow(0 0 20px rgba(111, 108, 255, 0.3));
+  }
+}
+
+
