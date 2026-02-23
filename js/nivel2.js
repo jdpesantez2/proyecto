@@ -1,168 +1,178 @@
+const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+let current = 0;
+let puntaje = 0;
+
 const preguntas = [
   {
     texto: "¿El bloque 'avanzar 10 pasos' a qué tipo pertenece?",
-    tipo: "columna",
     opciones: ["Movimiento", "Apariencia", "Operadores", "Sonido"],
-    correcta: 0
+    correcta: 0,
+    feedback: "El bloque 'avanzar 10 pasos' pertenece a Movimiento porque controla el desplazamiento del objeto."
   },
   {
     texto: "¿Qué tipo de bloque cambia el disfraz del personaje?",
-    tipo: "columna",
     opciones: ["Movimiento", "Apariencia", "Sensores", "Operadores"],
-    correcta: 1
+    correcta: 1,
+    feedback: "Los bloques de Apariencia permiten cambiar el disfraz, tamaño o efectos visuales."
   },
   {
     texto: "¿Qué bloque permite reproducir un sonido?",
-    tipo: "columna",
     opciones: ["Sonido", "Movimiento", "Control", "Operadores"],
-    correcta: 0
+    correcta: 0,
+    feedback: "El bloque Sonido se utiliza para reproducir música o efectos de audio."
   },
   {
     texto: "¿A qué tipo pertenece 'sumar 5 + 3'?",
-    tipo: "cuatro",
     opciones: ["Movimiento", "Operadores", "Apariencia", "Sensores"],
-    correcta: 1
+    correcta: 1,
+    feedback: "Pertenece a Operadores porque realiza cálculos matemáticos."
   },
   {
     texto: "¿Qué bloque permite repetir acciones?",
-    tipo: "cuatro",
     opciones: ["Control", "Sonido", "Movimiento", "Sensores"],
-    correcta: 0
+    correcta: 0,
+    feedback: "Los bloques de Control permiten repetir acciones y crear bucles."
   },
   {
     texto: "¿Qué bloque detecta si el mouse está encima?",
-    tipo: "cuatro",
     opciones: ["Sensores", "Apariencia", "Movimiento", "Operadores"],
-    correcta: 0
+    correcta: 0,
+    feedback: "Los bloques Sensores permiten detectar acciones o eventos externos."
   },
   {
-    texto: "¿Qué tipo de bloque corresponde al color AZUL?",
-    tipo: "color",
-    correcta: "Movimiento"
+    texto: "¿Qué tipo de bloque corresponde al color azul?",
+    opciones: ["Movimiento", "Apariencia", "Operadores", "Sensores"],
+    correcta: 0,
+    feedback: "El color azul representa los bloques de Movimiento."
   },
   {
-    texto: "¿Qué tipo de bloque corresponde al color MORADO?",
-    tipo: "color",
-    correcta: "Apariencia"
+    texto: "¿Qué tipo de bloque corresponde al color morado?",
+    opciones: ["Movimiento", "Apariencia", "Operadores", "Sensores"],
+    correcta: 1,
+    feedback: "El color morado representa los bloques de Apariencia."
   }
 ];
 
-let puntaje = 0;
 const contenedor = document.getElementById("preguntas");
+const nextBtn = document.getElementById("nextbtn");
 
-preguntas.forEach((p, i) => {
+function cargarPregunta() {
+
+  nextBtn.style.display = "none";
+  contenedor.innerHTML = "";
+
+  const p = preguntas[current];
+
   const div = document.createElement("div");
   div.className = "pregunta";
-  div.dataset.respondida = "false";
-  div.innerHTML = `<h3>${i + 1}. ${p.texto}</h3>`;
 
-  /* OPCIONES NORMALES */
-  if (p.tipo === "columna" || p.tipo === "cuatro") {
-    const opcionesDiv = document.createElement("div");
-    opcionesDiv.className =
-      p.tipo === "columna" ? "opciones-columna" : "opciones-cuatro";
+  div.innerHTML = `<h3>${current + 1}. ${p.texto}</h3>`;
 
-    p.opciones.forEach((op, index) => {
-      const btn = document.createElement("div");
-      btn.className = "opcion";
-      btn.textContent = op;
+  const opcionesDiv = document.createElement("div");
+  opcionesDiv.className = "opciones-columna";
 
-      btn.onclick = () => {
-        if (div.dataset.respondida === "true") return;
+  const feedbackDiv = document.createElement("div");
+  feedbackDiv.className = "feedback";
 
-        div.dataset.respondida = "true";
+  p.opciones.forEach((op, index) => {
 
-        const todas = opcionesDiv.querySelectorAll(".opcion");
-        todas.forEach(o => o.style.pointerEvents = "none");
+    const btn = document.createElement("div");
+    btn.className = "opcion";
+    btn.textContent = op;
 
-        if (index === p.correcta) {
-          btn.classList.add("correcta");
-          puntaje++;
-        } else {
-          btn.classList.add("incorrecta");
-          todas[p.correcta].classList.add("correcta");
-        }
-      };
+    btn.onclick = () => {
 
-      opcionesDiv.appendChild(btn);
-    });
+      const botones = opcionesDiv.querySelectorAll(".opcion");
+      botones.forEach(b => b.style.pointerEvents = "none");
 
-    div.appendChild(opcionesDiv);
-  }
+      if (index === p.correcta) {
 
-  /* PREGUNTAS DE COLORES */
-  if (p.tipo === "color") {
-    const colores = document.createElement("div");
-    colores.className = "colores";
+        btn.classList.add("correcta");
+        puntaje++;
 
-    ["Movimiento", "Apariencia", "Operadores", "Sensores"].forEach(op => {
-      const box = document.createElement("div");
-      box.className = "color-box";
-      box.textContent = op;
+        feedbackDiv.className = "feedback correcto";
+        feedbackDiv.innerHTML = `
+          <strong>Respuesta correcta</strong><br>
+          ${p.feedback}
+        `;
 
-      box.onclick = () => {
-        if (div.dataset.respondida === "true") return;
+      } else {
 
-        div.dataset.respondida = "true";
+        btn.classList.add("incorrecta");
+        botones[p.correcta].classList.add("correcta");
 
-        const todas = colores.querySelectorAll(".color-box");
-        todas.forEach(c => c.style.pointerEvents = "none");
+        feedbackDiv.className = "feedback incorrecto";
+        feedbackDiv.innerHTML = `
+          <strong>Respuesta incorrecta</strong><br>
+          ${p.feedback}
+        `;
+      }
 
-        if (op === p.correcta) {
-          box.classList.add("correcta");
-          puntaje++;
-        } else {
-          box.classList.add("incorrecta");
-          todas.forEach(c => {
-            if (c.textContent === p.correcta) {
-              c.classList.add("correcta");
-            }
-          });
-        }
-      };
+      feedbackDiv.style.display = "block";
+      nextBtn.style.display = "block";
+    };
 
-      colores.appendChild(box);
-    });
+    opcionesDiv.appendChild(btn);
+  });
 
-    div.appendChild(colores);
-  }
-
+  div.appendChild(opcionesDiv);
+  div.appendChild(feedbackDiv);
   contenedor.appendChild(div);
-});
+}
 
-/* BOTÓN FINAL */
-document.getElementById("finalizar").onclick = () => {
-  mostrarModal();
+nextBtn.onclick = () => {
+  current++;
+
+  if (current < preguntas.length) {
+    cargarPregunta();
+  } else {
+    mostrarResultado();
+  }
 };
 
-/* MODAL FINAL */
-function mostrarModal() {
-  const modal = document.createElement("div");
-  modal.className = "modal";
+function mostrarResultado() {
 
-  const box = document.createElement("div");
-  box.className = "modal-box";
+  const nota = Math.round((puntaje / preguntas.length) * 10);
 
-  const aprobado = puntaje >= 7;
+  document.body.innerHTML = `
+    <div class="resultado-final">
+      <div class="resultado-box">
+        <h2 style="color:#00f7ff">
+          ${usuario?.nombre || ""}<br><br>
+          Puntaje final: <strong>${nota}/10</strong>
+        </h2>
 
-  box.innerHTML = `
-    <h2>${aprobado ? "¡Felicidades!" : "Inténtalo otra vez"}</h2>
-    <p>Tu nota es:</p>
-    <h1>${puntaje}/10</h1>
-    <p>${aprobado ? "Pasaste al siguiente nivel" : "Debes repetir el nivel"}</p>
-    <button id="accionFinal">
-      ${aprobado ? "Continuar" : "Volver a intentar"}
-    </button>
+        <p style="margin-top:10px">
+          ${nota >= 7 ? "¡Felicidades! Pasaste al siguiente nivel." : "Debes repetir el nivel."}
+        </p>
+
+        <div style="margin-top:30px">
+          <a href="niveles.html" class="btn-volver-niveles">
+            Volver a niveles
+          </a>
+          ${
+            nota >= 7
+            ? `<a href="nivel3.html" class="btn-volver-niveles">Siguiente nivel</a>`
+            : `<a href="nivel2.html" class="btn-volver-niveles">Repetir nivel</a>`
+          }
+        </div>
+      </div>
+    </div>
   `;
-
-  modal.appendChild(box);
-  document.body.appendChild(modal);
-
-  document.getElementById("accionFinal").onclick = () => {
-    if (aprobado) {
-      window.location.href = "niveles.html";
-    } else {
-      location.reload();
-    }
-  };
 }
+
+cargarPregunta();
+
+function guardarResultado(nivel, nota){
+
+  let usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+  if(!usuario) return;
+
+  usuario.progreso[nivel].intentos += 1;
+  usuario.progreso[nivel].notas.push(nota);
+
+  localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+}
+guardarResultado("nivel2", 8); // ejemplo

@@ -1,30 +1,42 @@
-// Datos de ejemplo
-const notas = [8, 9, 7, 10, 8, 9];
-const nombre = "Estudiante";
+const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-// Mostrar nombre
-document.getElementById("nombre-usuario").textContent = nombre;
-
-// Variables
-let suma = 0;
-
-// Recorrer notas y actualizar barras
-notas.forEach((nota, i) => {
-    document.getElementById(`nota-nivel${i + 1}`).textContent = nota;
-    document.getElementById(`bar${i + 1}`).style.width = (nota * 10) + "%";
-    suma += nota;
-
-    // Guardar progreso solo si la nota >= 7
-    if(nota >= 7) {
-        localStorage.setItem(`nivel${i+1}`, nota);
-    }
-});
-
-// Calcular promedio
-const promedio = (suma / notas.length).toFixed(1);
-document.getElementById("promedio-final").textContent = promedio;
-
-// Guardar promedio final solo si >=7
-if(promedio >= 7){
-    localStorage.setItem("promedioFinal", promedio);
+if (!usuario) {
+  window.location.href = "login.html";
 }
+
+// Mostrar nombre real
+document.getElementById("nombre-usuario").textContent = usuario.nombre;
+
+let sumaPromedios = 0;
+let nivelesCompletados = 0;
+
+for(let i = 1; i <= 6; i++){
+
+  const nivel = usuario.progreso[`nivel${i}`];
+
+  if(nivel.intentos > 0){
+
+    // Obtener mejor nota del nivel
+    const mejorNota = Math.max(...nivel.notas);
+
+    document.getElementById(`nota-nivel${i}`).textContent = mejorNota;
+    document.getElementById(`bar${i}`).style.width = (mejorNota * 10) + "%";
+
+    sumaPromedios += mejorNota;
+    nivelesCompletados++;
+
+  } else {
+
+    document.getElementById(`nota-nivel${i}`).textContent = "0";
+    document.getElementById(`bar${i}`).style.width = "0%";
+  }
+}
+
+// Calcular promedio real
+let promedioFinal = 0;
+
+if(nivelesCompletados > 0){
+  promedioFinal = (sumaPromedios / nivelesCompletados).toFixed(1);
+}
+
+document.getElementById("promedio-final").textContent = promedioFinal;

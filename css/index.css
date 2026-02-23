@@ -22,7 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: -40px; /* 👈 lo acerca al texto */
+  margin-left: -60px; /* lo acerca al texto */
 }
 
 .inicio-imagen img {
@@ -64,62 +64,71 @@ body {
   margin-bottom: 60px;
 }
 
-/* ===== ROMBO SIMÉTRICO ===== */
+/* ===== CONTENEDOR DE BOTONES ===== */
 .rombo {
   position: relative;
-  width: 500px;
-  height: 200px;
+  width: 600px;
+  height: 220px;
+  margin: 0 auto;
 }
 
-/* BOTONES */
+/* ===== BOTONES (TODOS IGUALES) ===== */
 .btn {
   position: absolute;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #817676);
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  border-radius: 16px;
-  font-family: Arial;
-  font-size: 20px;
+  width: 180px;      /* 👈 TODOS MISMO ANCHO */
+  height: 50px;      /* 👈 TODOS MISMO ALTO */
+  line-height: 50px; /* centra el texto vertical */
+  background: #e6e6e6;
+  color: #000;
+  border-radius: 22px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
   text-align: center;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* HOVER */
+/* ===== HOVER (SIN LEVANTARSE) ===== */
 .btn:hover {
-  box-shadow: 0 0 16px rgba(90, 215, 255, 0.75);
+  background: #5ad7ff; /* color CodePlay */
+  box-shadow: 0 0 14px rgba(90, 215, 255, 0.6);
 }
 
-/* POSICIONES PERFECTAS */
-.top {
+/* ===== FILA SUPERIOR ===== */
+.top-left {
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-195px);
 }
 
-.center {
-  top: 50%;
+.top-right {
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(15px);
 }
 
-.left {
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.right {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-}
-
-.bottom {
-  bottom: 0;
+/* ===== FILA INFERIOR (AJUSTADA Y SIMÉTRICA) ===== */
+.bottom-left {
+  top: 100px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-300px); /* LetsCode */
 }
+
+.bottom-center {
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);   /* Empezar desafío */
+}
+
+.bottom-right {
+  top: 100px;
+  left: 50%;
+  transform: translateX(120px);  /* Robot */
+}
+
 
 /* CONTENEDOR DEL ROBOT */
 .robot-wrapper {
@@ -218,4 +227,45 @@ body {
   }
 }
 
+/* ===== FONDO NEGRO CURVO PARA CODEPLAY ===== */
+.inicio-texto {
+  position: relative;
+  z-index: 2;
+}
 
+/* Forma curva negra */
+.inicio-texto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120px; /* controla cuánto invade hacia la izquierda */
+  width: 110%;
+  height: 100%;
+  background: #000;
+
+  /* Curvatura elegante tipo medio círculo */
+  border-top-right-radius: 500px;
+  border-bottom-right-radius: 500px;
+
+  z-index: -1;
+
+  /* sombra suave para separar del fondo */
+  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.rombo {
+  width: 400px;
+  height: 120px;
+}
+
+.bottom-left {
+  top: 40px;
+  left: 50%;
+  transform: translateX(-190px);
+}
+
+.bottom-right {
+  top: 40px;
+  left: 50%;
+  transform: translateX(20px);
+}

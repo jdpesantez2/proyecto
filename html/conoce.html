@@ -15,8 +15,8 @@
     <li><a href="niveles.html">Niveles</a></li>
     <li><a href="robot.html">Robot</a></li>
     <li><a href="progreso.html">Progreso</a></li>
-    <li><a href="conoce.html"class="activo">Conoce</a></li>
-    <li><a href="registro.html">Registro</a></li>
+    <li><a href="conoce.html" class="activo">Conoce</a></li>
+  
   </ul>
 </nav>
 
@@ -24,136 +24,174 @@
   <div class="hero-box">
     <h1>Conoce LetsCode</h1>
     <p>
-      Let’s Code es una plataforma educativa que permite aprender programación
-      de forma visual, sencilla y divertida mediante bloques.
+      Let’s Code es una iniciativa educativa orientada a la enseñanza de la programación y el desarrollo 
+      del pensamiento lógico de manera práctica y accesible. Su propósito es facilitar el aprendizaje de
+     conceptos fundamentales de la programación mediante ejercicios, proyectos y ejemplos claros, permitiendo
+      a los estudiantes adquirir habilidades para resolver problemas y 
+      comprender el funcionamiento de distintas tecnologías utilizadas en el desarrollo de software.
     </p>
-
   </div>
 </header>
 
 <section class="intro">
   <h2>Tipos de Bloques</h2>
   <p>
-    En Let’s Code los programas se construyen con bloques.
-    Cada bloque cumple una función específica dentro del programa.
+    En Let’s Code los programas se construyen utilizando bloques visuales.
+    Cada bloque cumple una función específica y juntos permiten crear programas completos.
   </p>
 </section>
 
-<section class="mosaico">
+<!-- ===== CARRUSEL ===== -->
+<section class="mosaico carrusel">
 
-  <!-- MOVIMIENTO -->
-  <div class="bloque grande derecha">
-    <div class="texto">
-      <h3>🟦 Motion (Movimiento)</h3>
-      <p>Mueven al personaje o robot dentro del escenario.</p>
-      <b>Ejemplos:</b> mover pasos, girar grados.
-    </div>
-    <div class="img doble">
-      <div class="marco m1"><img src="../imagenes/imagen2.png"></div>
-      <div class="marco m2"><img src="../imagenes/imagen22.png"></div>
-    </div>
-  </div>
+  <button class="btn-carrusel prev">❮</button>
 
-  <!-- APARIENCIA -->
-  <div class="bloque grande izquierda">
-    <div class="img doble">
-      <div class="marco m3"><img src="../imagenes/imagen3.png"></div>
-      <div class="marco m4"><img src="../imagenes/imagen33.png"></div>
-    </div>
-    <div class="texto">
-      <h3>Looks (Apariencia)</h3>
-      <p>Cambian la apariencia del personaje.</p>
-      <b>Ejemplos:</b> cambiar disfraz, tamaño.
-    </div>
-  </div>
+  <div class="carrusel-track">
 
-  <!-- SONIDO -->
-  <div class="bloque grande derecha">
-    <div class="texto">
-      <h3>Sound (Sonido)</h3>
-      <p>Reproducen música o efectos de sonido.</p>
-      <b>Ejemplos:</b> tocar sonido, cambiar volumen.
-    </div>
-    <div class="img doble">
-      <div class="marco sound"><img src="../imagenes/imagen7.png"></div>
-      <div class="marco sound"><img src="../imagenes/imagen77.png"></div>
-    </div>
-  </div>
-
-  <!-- EVENTOS -->
-<div class="bloque ancho">
-  <div class="texto">
-    <h3>Events (Eventos)</h3>
-    <p>Son los bloques que inician la acción del programa.</p>
-    <b>Ejemplos:</b> al presionar bandera, al tocar una tecla.
-  </div>
-  <div class="img doble">
-    <div class="marco event">
-      <img src="../imagenes/imagen5.png">
-    </div>
-    <div class="marco event">
-      <img src="../imagenes/imagen55.png">
-    </div>
-  </div>
-</div>
-
-  <!-- CONTROL -->
-  <div class="bloque ancho">
-    <div class="texto">
-      <h3>Control</h3>
-      <p>Manejan la lógica y repetición del programa.</p>
-      <b>Ejemplos:</b> repetir, si-entonces, esperar.
-    </div>
-    <div class="img doble">
-      <div class="marco control"><img src="../imagenes/imagen6.png"></div>
-      <div class="marco control"><img src="../imagenes/imagen66.png"></div>
-    </div>
-  </div>
-
- <!-- OPERADORES + SENSORES -->
-<div class="bloque operadores-sensores">
-
-  <!-- OPERADORES -->
-  <div class="bloque-vertical izquierda">
-    <h3>Operators (Operadores)</h3>
-    <p>
-      Permiten realizar operaciones matemáticas, comparaciones y unir textos.
-      Son esenciales para la lógica del programa.
-    </p>
-    <b>Ejemplos:</b> sumar, restar, comparar valores.
-
-    <div class="imagenes-vertical">
-      <div class="marco operator">
-        <img src="../imagenes/sen1.png">
+    <!-- MOVIMIENTO -->
+    <div class="bloque grande derecha">
+      <div class="texto">
+        <h3>Motion (Movimiento)</h3>
+        <p>
+          Los bloques <b>Motion</b> permiten controlar el desplazamiento y la orientación
+          del personaje o robot dentro del escenario.
+        </p>
+        <p>
+          <b>Funciones:</b> mover, girar, cambiar dirección y posición.
+        </p>
+        <p>
+          <b>Ejemplos:</b> mover 10 pasos, girar 15°, apuntar a la derecha.
+        </p>
       </div>
-      <div class="marco operator">
-        <img src="../imagenes/sen.png">
+      <div class="img doble">
+        <div class="marco m1"><img src="../imagenes/imagen2.png"></div>
+        <div class="marco m2"><img src="../imagenes/imagen22.png"></div>
       </div>
     </div>
-  </div>
 
-  <!-- SENSORES -->
-  <div class="bloque-vertical derecha">
-    <h3>Sensing (Sensores)</h3>
-    <p>
-      Detectan lo que ocurre en la pantalla o con el usuario.
-    </p>
-    <b>Ejemplos:</b> tocar color, mouse encima, tecla presionada.
-
-    <div class="imagenes-vertical">
-      <div class="marco sense">
-        <img src="../imagenes/sen3.png">
+    <!-- APARIENCIA -->
+    <div class="bloque grande izquierda">
+      <div class="img doble">
+        <div class="marco m3"><img src="../imagenes/imagen3.png"></div>
+        <div class="marco m4"><img src="../imagenes/imagen33.png"></div>
       </div>
-      <div class="marco sense">
-        <img src="../imagenes/sen2.png">
+      <div class="texto">
+        <h3>Looks (Apariencia)</h3>
+        <p>
+          Los bloques <b>Looks</b> permiten cambiar la apariencia visual del personaje
+          para hacerlo más dinámico e interactivo.
+        </p>
+        <p>
+          <b>Funciones:</b> cambiar disfraces, tamaño, mostrar mensajes.
+        </p>
+        <p>
+          <b>Ejemplos:</b> cambiar disfraz, decir “Hola”, aumentar tamaño.
+        </p>
       </div>
     </div>
+
+    <!-- SONIDO -->
+    <div class="bloque grande derecha">
+      <div class="texto">
+        <h3>Sound (Sonido)</h3>
+        <p>
+          Los bloques <b>Sound</b> permiten reproducir sonidos y música
+          para acompañar las acciones del programa.
+        </p>
+        <p>
+          <b>Funciones:</b> reproducir sonidos, ajustar volumen.
+        </p>
+        <p>
+          <b>Ejemplos:</b> tocar sonido, detener sonidos, bajar volumen.
+        </p>
+      </div>
+      <div class="img doble">
+        <div class="marco sound"><img src="../imagenes/imagen7.png"></div>
+        <div class="marco sound"><img src="../imagenes/imagen77.png"></div>
+      </div>
+    </div>
+
+    <!-- EVENTOS -->
+    <div class="bloque ancho">
+      <div class="texto">
+        <h3>Events (Eventos)</h3>
+        <p>
+          Los bloques <b>Events</b> son los que inician la ejecución del programa.
+          Actúan como disparadores.
+        </p>
+        <p>
+          <b>Funciones:</b> iniciar al presionar bandera o una tecla.
+        </p>
+        <p>
+          <b>Ejemplos:</b> al presionar bandera verde, al presionar una tecla.
+        </p>
+      </div>
+      <div class="img doble">
+        <div class="marco event"><img src="../imagenes/imagen5.png"></div>
+        <div class="marco event"><img src="../imagenes/imagen55.png"></div>
+      </div>
+    </div>
+
+    <!-- CONTROL -->
+    <div class="bloque ancho">
+      <div class="texto">
+        <h3>Control</h3>
+        <p>
+          Los bloques <b>Control</b> manejan la lógica del programa
+          y controlan la repetición y condiciones.
+        </p>
+        <p>
+          <b>Funciones:</b> repetir acciones, condicionales, pausas.
+        </p>
+        <p>
+          <b>Ejemplos:</b> repetir 10 veces, si-entonces, esperar.
+        </p>
+      </div>
+      <div class="img doble">
+        <div class="marco control"><img src="../imagenes/imagen6.png"></div>
+        <div class="marco control"><img src="../imagenes/imagen66.png"></div>
+      </div>
+    </div>
+
+    <!-- OPERADORES Y SENSORES -->
+    <div class="bloque operadores-sensores">
+
+      <div class="bloque-vertical">
+        <h3>Operators (Operadores)</h3>
+        <p>
+          Permiten realizar operaciones matemáticas y comparaciones.
+        </p>
+        <p>
+          <b>Ejemplos:</b> sumar, restar, comparar valores.
+        </p>
+        <div class="imagenes-vertical">
+          <div class="marco operator"><img src="../imagenes/sen1.png"></div>
+          <div class="marco operator"><img src="../imagenes/sen.png"></div>
+        </div>
+      </div>
+
+      <div class="bloque-vertical">
+        <h3>Sensing (Sensores)</h3>
+        <p>
+          Detectan acciones del usuario o eventos del entorno.
+        </p>
+        <p>
+          <b>Ejemplos:</b> tocar color, mouse encima, tecla presionada.
+        </p>
+        <div class="imagenes-vertical">
+          <div class="marco sense"><img src="../imagenes/sen3.png"></div>
+          <div class="marco sense"><img src="../imagenes/sen2.png"></div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
-</div>
-
+  <button class="btn-carrusel next">❯</button>
 
 </section>
 
+<script src="../js/conoce.js"></script>
 </body>
 </html>

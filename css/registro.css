@@ -1,112 +1,79 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    background: black;
+    margin: 0;
     height: 100vh;
+    background: radial-gradient(circle, #15002b, #05000f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    width: 850px;
+}
+
+.tarjeta {
+    display: flex;
+    background: rgba(0,0,0,0.85);
+    border-radius: 25px;
     overflow: hidden;
+    box-shadow: 0 0 40px #8f00ff;
 }
 
-/* Paneles morados a pantalla completa */
-.panel {
-    position: fixed;
-    top: 0;
-    width: 22%;
-    height: 100vh;
-    background: linear-gradient(180deg, #7b1fd1, #2b003a);
-    border: 3px solid #00aaff;
+.lado-bienvenida {
+    flex: 1;
+    background: linear-gradient(135deg, #00e5ff, #8f00ff);
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.left {
-    left: -40px;
-    transform: skewX(-6deg);
-}
-
-.right {
-    right: -40px;
-    transform: skewX(6deg);
-}
-
-/* Contenedor central */
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.lado-formulario {
+    flex: 1;
+    padding: 40px;
     text-align: center;
-    color: #00aaff;
 }
 
-h1 {
-    font-size: 60px;
-    margin-bottom: 30px;
-    font-family: 'Comic Sans MS', cursive;
+.lado-formulario h2 {
+    color: #00e5ff;
 }
 
-/* Formulario */
-form {
-    width: 340px;
-}
-
-label {
-    display: block;
+.input-group {
+    margin-bottom: 15px;
     text-align: left;
-    margin-top: 18px;
-    margin-bottom: 6px;
-    font-size: 14px;
-    color: #00aaff;
 }
 
 input {
     width: 100%;
-    padding: 10px;
-    background: transparent;
-    border: 2px solid #8a2be2;
-    color: white;
-    font-size: 15px;
-    outline: none;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 14px;
 }
 
 input:focus {
-    border-color: #00aaff;
+    outline: 2px solid #8f00ff;
 }
 
-/* Botones */
-.buttons {
-    margin-top: 30px;
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    flex: 1;
-    padding: 10px;
+button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 20px;
     border: none;
-    cursor: pointer;
-    font-size: 15px;
+    background: linear-gradient(135deg, #00e5ff, #8f00ff);
     font-weight: bold;
-}
-
-.registrar {
-    background: #8a2be2;
+    cursor: pointer;
     color: white;
+    transition: 0.3s;
 }
 
-.registrar:hover {
-    background: #00aaff;
+button:hover {
+    transform: scale(1.05);
 }
 
-.volver {
-    background: transparent;
-    color: #00aaff;
-    border: 2px solid #00aaff;
-}
-
-.volver:hover {
-    background: #00aaff;
-    color: black;
+.error {
+    color: #ff4d4d;
+    font-size: 12px;
 }

@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class="quiz-container">
+<div class="quiz-container fade">
   <h2 id="question">Pregunta</h2>
 
   <div class="options">
@@ -16,6 +16,16 @@
     <button class="option" data-index="2"></button>
     <button class="option" data-index="3"></button>
   </div>
+
+  <!-- RETROALIMENTACIÓN PRO -->
+  <div id="feedback" class="feedback-box"></div>
+
+  <div class="next-container">
+    <button id="nextBtn" class="next-btn" style="display:none;">
+      Siguiente 
+    </button>
+  </div>
+
 </div>
 
 <script src="../js/nivel1.js"></script>

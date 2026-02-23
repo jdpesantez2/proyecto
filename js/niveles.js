@@ -1,20 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
+verificarSesion();
+protegerPagina();
+actualizarNavbar();
+const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-  const user = localStorage.getItem("usuarioRegistrado");
+if (!usuario) {
+  window.location.href = "login.html";
+}
 
-  if (!user) {
-    window.location.href = "registro.html";
-    return;
+const progreso = JSON.parse(localStorage.getItem("progreso"));
+
+document.querySelectorAll(".nivel").forEach(nivel => {
+  const num = Number(nivel.dataset.nivel);
+
+  if (num > progreso.nivelDesbloqueado) {
+    nivel.classList.add("bloqueado");
+    nivel.onclick = () => alert("Nivel bloqueado");
   }
-
-  const btnNivel1 = document.getElementById("btn-nivel1");
-
-  if (btnNivel1) {
-    btnNivel1.addEventListener("click", () => {
-      window.location.href = "nivel1.html";
-    });
-  }
-
 });
-
-

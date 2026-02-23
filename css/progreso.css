@@ -4,128 +4,161 @@
     padding: 0;
 }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom, #4B0082, #8A2BE2);
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #4B0082, #12001f);
     color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 /* ===== NAVBAR ===== */
 .navbar {
-    width: 100%;
+  width: 100%;
+  box-sizing: border-box;
     padding: 15px 40px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #544ac5);
+
+    background: linear-gradient(135deg, #ffffff);
     box-shadow: 0 4px 10px rgb(255, 255, 255);
+
     position: sticky;
     top: 0;
     left: 0;
     z-index: 1000;
+
+    border-radius: 0;          /* CLAVE */
 }
 
+
+
 .nav-logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000000;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #fff;
+  color: #000000;
 }
 
 .nav-links .activo {
-    color: #fff;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 3px;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 3px;
 }
 
-/* CONTENEDOR PRINCIPAL */
+
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
 #progreso-container {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 900px;
-    margin: 100px auto 50px;
-    box-shadow: 0 0 30px rgba(0, 206, 209, 0.5);
-    animation: aparecer 0.8s ease;
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+    animation: aparecer 1s ease;
 }
 
-/* ANIMACIÓN */
 @keyframes aparecer {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== TITULO ===== */
 h2 {
-    color: #00CED1;
-    margin-bottom: 25px;
-    text-align: center;
-    text-shadow: 0 0 6px rgba(0, 206, 209, 0.5);
+    color: #00fff0;
+    text-shadow: 0 0 10px rgba(0,255,255,0.6);
 }
 
-/* TARJETA DE PROGRESO */
+/* ===== TARJETA ===== */
 .tarjeta {
-    background: rgba(30, 0, 60, 0.7);
+    width: 1120px;
+    max-width: 90%;
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0, 206, 209, 0.4);
-    margin-bottom: 25px;
+    border-radius: 28px;
+    background: linear-gradient(160deg, #1a0033, #2c0057);
+    box-shadow: 
+        0 0 40px rgba(0,255,255,0.35),
+        inset 0 0 15px rgba(255,255,255,0.05);
+    animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
 }
 
 .tarjeta h3 {
-    margin-bottom: 25px;
-    color: #00CED1;
-    text-align: center;
+    margin-bottom: 20px;
+    color: #00fff0;
 }
 
-/* NIVELES */
+/* ===== NIVELES ===== */
 .nivel {
     display: grid;
-    grid-template-columns: 90px 1fr 50px;
+    grid-template-columns: 70px 1fr 40px;
+    gap: 12px;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
+    padding: 10px;
+    border-radius: 14px;
+    transition: all 0.3s ease;
 }
 
-/* BARRA */
+.nivel:hover {
+    background: rgba(255,255,255,0.08);
+    transform: scale(1.04);
+}
+
+/* ===== BARRAS ===== */
 .barra {
-    height: 18px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
+    height: 14px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
     overflow: hidden;
 }
 
 .barra div {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #00CED1, #9370DB);
-    border-radius: 12px;
-    transition: width 1s ease-in-out;
+    background: linear-gradient(90deg, #00fff0, #8a2be2);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,255,255,0.6);
+    transition: width 1.5s ease;
 }
 
-/* PROMEDIO */
+/* ===== PROMEDIO ===== */
 .promedio {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 1.8em;
-    color: #00CED1;
-    text-shadow: 0 0 10px rgba(0, 206, 209, 0.6);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00fff0;
+    text-shadow: 0 0 15px rgba(0,255,255,0.9);
+    animation: pulso 2s infinite;
+}
+
+@keyframes pulso {
+    0% { text-shadow: 0 0 10px rgba(0,255,255,0.6); }
+    50% { text-shadow: 0 0 25px rgba(0,255,255,1); }
+    100% { text-shadow: 0 0 10px rgba(0,255,255,0.6); }
 }

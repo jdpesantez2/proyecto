@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nivel 3 - Partes del Robot</title>
+<link rel="stylesheet" href="../css/nivel3.css">
+</head>
+<body>
+
+<div class="game-container">
+
+  <div class="instruction-box">
+    <div id="instruction">Arrastra cada parte a su lugar</div>
+  </div>
+
+  <!-- PREGUNTA 1 -->
+  <div class="question active" id="q1">
+
+    <div class="robot-wrapper">
+      <img src="../imagenes/robot1.png" class="robot-img">
+
+      <!-- RECUADROS EXACTOS EN LAS LÍNEAS -->
+      <div class="drop-zone dz-ultra" data-answer="Ultrasonic Distance Sensor"></div>
+      <div class="drop-zone dz-esp32" data-answer="ESP32 Controller Module"></div>
+      <div class="drop-zone dz-ir" data-answer="IR Receiver / Receptor IR"></div>
+      <div class="drop-zone dz-buzzer" data-answer="Speaker / Altavoz"></div>
+      <div class="drop-zone dz-i2c" data-answer="I2C Interface / Interfaz I2C"></div>
+    </div>
+
+    <div class="drag-options">
+      <div class="drag-word" draggable="true">Ultrasonic Distance Sensor</div>
+      <div class="drag-word" draggable="true">ESP32 Controller Module</div>
+      <div class="drag-word" draggable="true">IR Receiver / Receptor IR</div>
+      <div class="drag-word" draggable="true">Speaker / Altavoz</div>
+      <div class="drag-word" draggable="true">I2C Interface / Interfaz I2C</div>
+    </div>
+
+    <button class="btn" id="checkDrag">Enviar</button>
+  </div>
+
+ <!-- PREGUNTAS 2–7 -->
+<div class="question" id="q2">
+  <h2>¿Para qué sirve el sensor ultrasónico?</h2>
+  <div class="option" data-correct="true">Mide distancia a objetos</div>
+  <div class="option" data-correct="false">Emite sonido</div>
+  <div class="option" data-correct="false">Controla motores</div>
+</div>
+
+<div class="question" id="q3">
+  <h2>¿Cuál es el cerebro del robot?</h2>
+  <div class="option" data-correct="false">Sensor IR</div>
+  <div class="option" data-correct="true">ESP32</div>
+  <div class="option" data-correct="false">Buzzer</div>
+</div>
+
+<div class="question" id="q4">
+  <h2>¿Qué recibe señales infrarrojas?</h2>
+  <div class="option" data-correct="true">Receptor IR</div>
+  <div class="option" data-correct="false">Sensor ultrasónico</div>
+  <div class="option" data-correct="false">I2C</div>
+</div>
+
+<div class="question" id="q5">
+  <h2>¿Qué componente emite sonido?</h2>
+  <div class="option" data-correct="false">ESP32</div>
+  <div class="option" data-correct="true">Altavoz</div>
+  <div class="option" data-correct="false">Sensor IR</div>
+</div>
+
+<div class="question" id="q6">
+  <h2>¿Qué permite conectar módulos?</h2>
+  <div class="option" data-correct="true">Interfaz I2C</div>
+  <div class="option" data-correct="false">Ultrasonido</div>
+  <div class="option" data-correct="false">Buzzer</div>
+</div>
+
+<div class="question" id="q7">
+  <h2>¿Qué sensor se usa para seguir líneas?</h2>
+  <div class="option" data-correct="true">Sensor infrarrojo</div>
+  <div class="option" data-correct="false">Ultrasónico</div>
+  <div class="option" data-correct="false">ESP32</div>
+</div>
+
+
+  <!-- RESULTADO -->
+  <div class="result-box" id="result">
+    <h2>Resultado</h2>
+    <p id="score"></p>
+  </div>
+
+</div>
+
+<script src="../js/nivel3.js"></script>
+</body>
+</html>

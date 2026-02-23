@@ -9,7 +9,7 @@ html, body {
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    background: linear-gradient(to bottom, #3b145f, #2882af);
+    background: linear-gradient(to bottom, #000000, #23114a);
     color: #fff;
     text-align: center;
 }
@@ -137,7 +137,7 @@ main {
     justify-content: space-between;
     align-items: center;
 
-    background: linear-gradient(135deg, #544ac5);
+    background: linear-gradient(135deg, #ffffff);
     box-shadow: 0 4px 10px rgb(255, 255, 255);
 
     position: sticky;
@@ -153,7 +153,7 @@ main {
 .nav-logo {
   font-size: 22px;
   font-weight: bold;
-  color: #fff;
+  color: #000000;
 }
 
 .nav-links {
@@ -166,17 +166,59 @@ main {
 
 .nav-links a {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #fff;
+  color: #000000;
 }
 
 .nav-links .activo {
-  color: #fff;
-  border-bottom: 2px solid #fff;
+  color: #000000;
+  border-bottom: 2px solid #000000;
   padding-bottom: 3px;
+}
+
+/* ===== QUITAR SCROLL DE LA PÁGINA ===== */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Ajuste general para que todo entre en pantalla */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Evita que el contenido empuje hacia abajo */
+main {
+  margin-bottom: 0;
+}
+
+/* Reduce el alto del header */
+header {
+  padding: 30px 20px 20px;
+}
+
+/* Oculta el footer (causa scroll extra) */
+footer {
+  display: none;
+}
+
+/* ===== CENTRAR EL RECUADRO DE NIVELES ===== */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor principal */
+main#niveles-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

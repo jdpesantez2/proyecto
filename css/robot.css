@@ -2,7 +2,7 @@
 body{
   margin:0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg,#000000,#6132c6,#000000);
+  background: linear-gradient(180deg,#000000,#361c6e,#000000);
   color:white;
 }
 
@@ -16,7 +16,7 @@ body{
     justify-content: space-between;
     align-items: center;
 
-    background: linear-gradient(135deg, #544ac5);
+    background: linear-gradient(135deg, #ffffff);
     box-shadow: 0 4px 10px rgb(255, 255, 255);
 
     position: sticky;
@@ -32,7 +32,7 @@ body{
 .nav-logo {
   font-size: 22px;
   font-weight: bold;
-  color: #fff;
+  color: #000000;
 }
 
 .nav-links {
@@ -45,20 +45,21 @@ body{
 
 .nav-links a {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #fff;
+  color: #000000;
 }
 
 .nav-links .activo {
-  color: #fff;
-  border-bottom: 2px solid #fff;
+  color: #000000;
+  border-bottom: 2px solid #000000;
   padding-bottom: 3px;
 }
+
 
 /* HERO */
 .robot-hero{
